@@ -1,23 +1,22 @@
 import React from "react";
 import { Button, Container, Dropdown, Menu, Icon } from "semantic-ui-react";
+import SignedIn from "./SignedIn";
+import SignedOut from "./SignedOut";
 
 export default function Navi() {
 
     const employee =()=>{
-
     }
-
+   
     const employer =()=>{
-
     }
 
     const candidate =()=>{
-
     }
-    
-    return (
-        <div>
-            <Menu inverted fixed="top">
+
+  return (
+    <div>
+      <Menu inverted fixed="top">
       <Container>
           <Menu.Item name="hire a helper">
             <Icon name="hire a helper" size="large" /> HMRS
@@ -36,15 +35,11 @@ export default function Navi() {
           </Menu.Item>
         
           <Menu.Menu position="right">
-          <Menu.Item>
-          <Button >Login</Button>
-          </Menu.Item>
-            <Menu.Item>
-              <Button >Sign Up</Button>
-            </Menu.Item>
+            <SignedOut/>
+            <SignedIn/>
           </Menu.Menu>
         </Container>
-        </Menu>
-        </div>
-    )
+      </Menu>
+    </div>
+  );
 }

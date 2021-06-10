@@ -13,13 +13,8 @@ export default function Filters() {
         <Menu.Item>
           <Input icon='search' placeholder='Search Cities...' />
         </Menu.Item>
-        <Menu.Item
-          name='Job Title Lists'
-
-        >
-         Job Title Lists
-        </Menu.Item>
-
+       
+      
  
       </Menu>
     </div>
