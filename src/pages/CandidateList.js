@@ -1,4 +1,5 @@
 import React, { useState,useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Icon, Menu, Table } from "semantic-ui-react";
 import CandidateService from "../services/candidateService";
 
@@ -28,7 +29,7 @@ export default function CandidateList() {
           {candidates.map((candidate) => (
             <Table.Row key={candidate.id}>
               <Table.Cell>{candidate.email}</Table.Cell>
-              <Table.Cell>{candidate.firstName}</Table.Cell>
+              <Table.Cell><Link to={`/candidates/${candidate.firstName}`}>{candidate.firstName}</Link></Table.Cell>
               <Table.Cell>{candidate.lastName}</Table.Cell>
               <Table.Cell>{candidate.identityNumber}</Table.Cell>
               <Table.Cell>{candidate.birthDate}</Table.Cell>

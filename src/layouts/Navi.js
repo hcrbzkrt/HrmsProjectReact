@@ -1,9 +1,22 @@
-import React from "react";
-import { Button, Container, Dropdown, Menu, Icon } from "semantic-ui-react";
+import React,{useState} from "react";
+import { useHistory } from "react-router";
+import { Container, Dropdown, Menu, Icon } from "semantic-ui-react";
 import SignedIn from "./SignedIn";
 import SignedOut from "./SignedOut";
 
 export default function Navi() {
+
+  const [isAuthenticated, setIsAuthenticated] = useState(false)
+  const history= useHistory()
+
+  function handleSignOut() {
+    setIsAuthenticated(false)
+    history.push("/")
+  }
+
+  function handleSignIn() {
+    setIsAuthenticated(true)
+  }
 
     const employee =()=>{
     }
@@ -13,6 +26,7 @@ export default function Navi() {
 
     const candidate =()=>{
     }
+
 
   return (
     <div>
@@ -32,11 +46,9 @@ export default function Navi() {
           <Menu.Item onClick={employee}>
             <Icon  name="id badge" size="large" />{" "}
             Employees{" "}
-          </Menu.Item>
-        
+            </Menu.Item>
           <Menu.Menu position="right">
-            <SignedOut/>
-            <SignedIn/>
+            {isAuthenticated?<SignedIn signOut={handleSignOut} x="0"/>:<SignedOut signIn={handleSignIn}/>}  
           </Menu.Menu>
         </Container>
       </Menu>

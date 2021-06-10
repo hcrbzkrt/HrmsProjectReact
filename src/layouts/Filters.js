@@ -1,22 +1,18 @@
 import React from "react";
-import { Menu,Input } from "semantic-ui-react";
+import { NavLink } from "react-router-dom";
+import { Dropdown } from "semantic-ui-react";
 
 export default function Filters() {
   return (
     <div>
-      <Menu vertical>
-      <Menu.Item
-          name='Cities'
-        >
-          Cities
-        </Menu.Item>
-        <Menu.Item>
-          <Input icon='search' placeholder='Search Cities...' />
-        </Menu.Item>
-       
-      
- 
-      </Menu>
+      <Dropdown item text = "Your application">
+        <Dropdown.Menu>
+        <Dropdown.Item>aaa</Dropdown.Item>
+        <Dropdown.Item>bbb</Dropdown.Item>
+        <Dropdown.Divider/>
+        <Dropdown.Item as={NavLink} to="/application">Application</Dropdown.Item>
+        </Dropdown.Menu>
+      </Dropdown>
     </div>
   );
 }
