@@ -13,7 +13,7 @@ export default function Navi() {
     setIsAuthenticated(false)
     history.push("/")
   }
-
+  
   function handleSignIn() {
     setIsAuthenticated(true)
   }
