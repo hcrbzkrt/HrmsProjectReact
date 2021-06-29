@@ -1,6 +1,7 @@
-import React,{useState} from "react";
+import React from "react";
+import {useState} from "react";
 import { useHistory } from "react-router";
-import { Container, Dropdown, Menu, Icon } from "semantic-ui-react";
+import { Container, Menu, Icon } from "semantic-ui-react";
 import SignedIn from "./SignedIn";
 import SignedOut from "./SignedOut";
 
@@ -18,14 +19,8 @@ export default function Navi() {
     setIsAuthenticated(true)
   }
 
-    const employee =()=>{
-    }
-   
-    const employer =()=>{
-    }
 
-    const candidate =()=>{
-    }
+
 
 
   return (
@@ -35,20 +30,14 @@ export default function Navi() {
           <Menu.Item name="hire a helper">
             <Icon name="hire a helper" size="large" /> HMRS
           </Menu.Item>
-          <Menu.Item onClick={candidate}>
-            <Icon  name="address card outline" size="large" />{" "}
-            Candidates{" "}
-          </Menu.Item>
-
-          <Menu.Item onClick={employer}>
-            <Icon  name="user" size="large" /> Employers{" "}
-          </Menu.Item>
-          <Menu.Item onClick={employee}>
-            <Icon  name="id badge" size="large" />{" "}
-            Employees{" "}
-            </Menu.Item>
+        
+          <Menu.Menu position="right">
+          <Menu.Item>
           <Menu.Menu position="right">
             {isAuthenticated?<SignedIn signOut={handleSignOut} x="0"/>:<SignedOut signIn={handleSignIn}/>}  
+          </Menu.Menu>
+          </Menu.Item>
+            
           </Menu.Menu>
         </Container>
       </Menu>

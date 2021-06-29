@@ -1,12 +1,11 @@
-import React from "react";
-import JobAdvertisementList from "../pages/JobAdvertisementList"
+import React from 'react';
+
 
 
 export default function Section() {
     return (
         <div>
-        <JobAdvertisementList></JobAdvertisementList>
-       
+          
         </div>
     )
 }

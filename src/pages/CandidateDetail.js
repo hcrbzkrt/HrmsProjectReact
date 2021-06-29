@@ -2,10 +2,10 @@ import React from 'react'
 import { useParams } from 'react-router'
 
 export default function CandidateDetail() {
-    let {firstName} = useParams()
+    let {apply} = useParams()
     return (
         <div>
-            Application : {firstName}
+            Application : {apply}
         </div>
     )
 }
