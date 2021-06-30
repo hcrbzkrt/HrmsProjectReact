@@ -28,7 +28,7 @@ export default function Candidates() {
                 </Card.Content>
                 <Card.Content extra>
                   <div className="ui two buttons">
-                    <Button basic color="green" as={Link} to={`/cvs/${candidate.id}`}>
+                    <Button basic color="primary"  as={Link} to={`/cvs/${candidate.id}`}>
                      see your CV 
                     </Button>
                   </div>

@@ -1,7 +1,7 @@
 import React from "react";
 import {useState} from "react";
 import { useHistory } from "react-router";
-import { Container, Menu, Icon } from "semantic-ui-react";
+import { Container,Button, Menu, Icon, Link } from "semantic-ui-react";
 import SignedIn from "./SignedIn";
 import SignedOut from "./SignedOut";
 
@@ -18,11 +18,6 @@ export default function Navi() {
   function handleSignIn() {
     setIsAuthenticated(true)
   }
-
-
-
-
-
   return (
     <div>
       <Menu inverted fixed="top">
@@ -37,7 +32,11 @@ export default function Navi() {
             {isAuthenticated?<SignedIn signOut={handleSignOut} x="0"/>:<SignedOut signIn={handleSignIn}/>}  
           </Menu.Menu>
           </Menu.Item>
-            
+          <Menu.Menu position="right" style={{ margin: '0.5em' }}>
+              <Button.Group>
+              <Button.Group to={"/register"}>Kaydol</Button.Group>
+            </Button.Group>
+          </Menu.Menu>
           </Menu.Menu>
         </Container>
       </Menu>

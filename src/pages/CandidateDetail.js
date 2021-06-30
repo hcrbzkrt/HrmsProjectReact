@@ -5,7 +5,7 @@ export default function CandidateDetail() {
     let {apply} = useParams()
     return (
         <div>
-            Application : {apply}
+            Application 
         </div>
     )
 }

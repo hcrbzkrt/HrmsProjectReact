@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 import {Table,Button, Header,Icon} from "semantic-ui-react";
 import JobAdvertisementService from '../services/jobAdvertisementService';
+
+
 export default function JobAdvertisements() {
 
   const [jobAdvertisements, setJobAdvertisements] = useState([]);
@@ -9,12 +11,12 @@ export default function JobAdvertisements() {
 
   useEffect(() => {
     let jobAdvertisementService = new JobAdvertisementService();
-    jobAdvertisementService.getCvs().then((result) => setJobAdvertisements(result.data.data));
+    jobAdvertisementService.getJobAdvertisements().then((result) => setJobAdvertisements(result.data.data));
   }, []);
 
-  
+
   return (
-    <div>
+    <div style={{marginTop:"0.3em"}} >
       <Header  as="h2">
         <Icon name="bullhorn" />
         <Header.Content>Employers</Header.Content>
@@ -51,8 +53,7 @@ export default function JobAdvertisements() {
           ))}
         </Table.Body>
       </Table>
-      
-      
+     
     </div>
   )
 }

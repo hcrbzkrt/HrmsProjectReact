@@ -3,15 +3,13 @@ import { useParams } from "react-router";
 import EmployerService from "../services/employerService";
 import { Header, Table, Icon} from "semantic-ui-react";
 export default function EmployerDetail() {
-  let { } = useParams();
-
   const [employer, setEmployer] = useState({});
 
   useEffect(() => {
     let employerService = new EmployerService();
-    employerService
-    .then((result) => setEmployer(result.data.data));
-  },[]);
+    employerService.then((result) => setEmployer(result.data.data));
+  }, []);
+
 
   return (
     <div>

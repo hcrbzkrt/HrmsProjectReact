@@ -5,10 +5,10 @@ import { Icon, Menu } from 'semantic-ui-react'
 export default function Categories() {
   return (
     <div>
-      <Menu fluid compact icon="labeled" vertical>
-        <Menu.Item as={Link} to={"/jobadvertisements"}>
+      <Menu fluid compact icon="labeled" pointing vertical>
+        <Menu.Item as={Link} to={"/jobadvertisments"}>
             <Icon name="list" />
-            Job Advertisement       
+            Job Advertisement        
         </Menu.Item>
 
         <Menu.Item as={Link} to={"/employers"}>

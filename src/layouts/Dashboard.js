@@ -9,14 +9,14 @@ import { Container, Grid } from 'semantic-ui-react';
 
 export default function Dashboard() {
   return (
-    <div>
+    <div >
         <Navi />
-            <Container className="main">                
+            <Container style={{marginTop:"0.5em"}} className="main">                
                 <Grid stackable>
                     <Grid.Column width={4}>
                         <Categories />
                     </Grid.Column>
-                    <Grid.Column width={12}>
+                    <Grid.Column style={{marginTop:"0.5em"}} width={12}>
                         <Route exact path="/cvs" component={Cvs}/>
                         <Route exact path="/employers" component={Employers}/>
                         <Route exact path="/candidates" component={Candidates}/>
